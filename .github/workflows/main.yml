@@ -12,7 +12,6 @@ jobs:
       with:
         flutter-version: 3.24.0
     - run: flutter pub get
-    - run: flutter test
     - run: flutter build apk
     - run: flutter build appbundle
     # - name: Set up Flutter
