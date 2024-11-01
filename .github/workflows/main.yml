@@ -12,7 +12,8 @@ jobs:
 
     - name: Install dependencies
       run: flutter pub get
-      working-directory: ./
+      working-directory: /home/runner/work/c001apk-flutter/c001apk-flutter
+      
     - name: Run tests
       run: flutter test
 
