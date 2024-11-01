@@ -5,23 +5,16 @@ jobs:
     name: install dependencies
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@master
-      
-    - name: Print current directory
-      run: echo "Current directory is ${{ github.workspace }}"
-      
-    - name: clean stale build and cache
-      uses: jddeep/Flutter-Runner@1.2.0
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v1
       with:
-        args: clean
+        flutter-version: '2.5.3' # Specify the version of Flutter you want to use
 
-    - name: install dependencies
-      uses: jddeep/Flutter-Runner@1.2.0
-      with:
-        args: pub get
+    - name: Install dependencies
+      run: flutter pub get
 
-    - name: build apk
-      uses: jddeep/Flutter-Runner@1.2.0
-      with:
-        args: build apk --release
+    - name: Run tests
+      run: flutter test
+
+    - name: Build APK
+      run: flutter build apk --release
