@@ -1,5 +1,5 @@
 on: push
-name: cleans, build and test app (mobile - android)
+name: main
 jobs:
   build:
     name: install dependencies
