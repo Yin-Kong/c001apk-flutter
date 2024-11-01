@@ -12,7 +12,7 @@ jobs:
 
     - name: Install dependencies
       run: flutter pub get
-
+      working-directory: ./
     - name: Run tests
       run: flutter test
 
