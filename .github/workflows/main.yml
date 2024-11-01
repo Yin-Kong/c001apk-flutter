@@ -12,16 +12,16 @@ jobs:
       run: echo "Current directory is ${{ github.workspace }}"
       
     - name: clean stale build and cache
-      uses: ./action
+      uses: jddeep/Flutter-Runner@1.2.0
       with:
         args: clean
 
     - name: install dependencies
-      uses: ./action
+      uses: jddeep/Flutter-Runner@1.2.0
       with:
         args: pub get
 
     - name: build apk
-      uses: ./action
+      uses: jddeep/Flutter-Runner@1.2.0
       with:
         args: build apk --release
