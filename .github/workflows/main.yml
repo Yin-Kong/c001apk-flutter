@@ -1,11 +1,3 @@
-action.yml
-name: 'Flutter Runner'
-description: 'Github action for apk building for flutter apps.'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  ---------------------------------------
-main.yml
 on: push
 name: cleans, build and test app (mobile - android)
 jobs:
