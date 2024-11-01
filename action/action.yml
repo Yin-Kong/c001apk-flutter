@@ -1,5 +1,6 @@
 name: 'Flutter Runner'
 description: 'Github action for apk building for flutter apps.'
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+              - name: Flutter Runner
+                uses: jddeep/Flutter-Runner@1.2.0
+            
