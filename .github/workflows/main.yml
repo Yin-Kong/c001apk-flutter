@@ -5,17 +5,27 @@ jobs:
     name: install dependencies
     runs-on: ubuntu-latest
     steps:
+    - name: Clone repository
+      uses: actions/checkout@v4
     - name: Set up Flutter
-      uses: subosito/flutter-action@v1
+      uses: subosito/flutter-action@v2
       with:
-        flutter-version: '2.5.3' # Specify the version of Flutter you want to use
+        flutter-version: 3.19.0
+    - run: flutter pub get
+    - run: flutter test
+    - run: flutter build apk
+    - run: flutter build appbundle
+    # - name: Set up Flutter
+    #   uses: subosito/flutter-action@v1
+    #   with:
+    #     flutter-version: '2.5.3' # Specify the version of Flutter you want to use
 
-    - name: Install dependencies
-      run: flutter pub get
-      working-directory: /home/runner/work/c001apk-flutter/c001apk-flutter
+    # - name: Install dependencies
+    #   run: flutter pub get
+    #   working-directory: /home/runner/work/c001apk-flutter/c001apk-flutter
       
-    - name: Run tests
-      run: flutter test
+    # - name: Run tests
+    #   run: flutter test
 
-    - name: Build APK
-      run: flutter build apk --release
+    # - name: Build APK
+    #   run: flutter build apk --release
