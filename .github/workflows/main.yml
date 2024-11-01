@@ -12,16 +12,16 @@ jobs:
       run: echo "Current directory is ${{ github.workspace }}"
       
     - name: clean stale build and cache
-      uses: ./.github/workflows/action
+      uses: ./action
       with:
         args: clean
 
     - name: install dependencies
-      uses: ./.github/workflows/action
+      uses: ./action
       with:
         args: pub get
 
     - name: build apk
-      uses: ./.github/workflows/action
+      uses: ./action
       with:
         args: build apk --release
